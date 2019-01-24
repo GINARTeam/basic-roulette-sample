@@ -1,0 +1,90 @@
+html,
+body {
+  position: relative;
+  /* box-sizing: border-box; */
+  margin: 0px auto;
+  padding: 0px;
+  border: none;
+  width: 100%;
+  height: 100%;
+}
+
+canvas {
+  display: block;
+  box-sizing: border-box;
+  width: 100% !important;
+  height: auto !important;
+}
+
+span {
+  word-wrap: break-word;
+}
+
+.container-fluid {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin: 0px auto !important;
+  background-image: url('/background.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.row {
+  margin: 0px auto !important;
+}
+
+.d-flex .flex-row .flex-wrap {
+  margin: 0px auto !important;
+}
+
+.btn,
+.btn-group > * {
+  color: #ffffff !important;
+  font-size: 1.5em !important;
+  font-weight: bold !important;
+  border-color: #ffffff !important;
+  border-width: 2px;
+  z-index: 1;
+}
+
+#alert {
+  position: absolute;
+  margin: 0px auto;
+  top: 10px;
+  left: 25%;
+  width: 50%;
+  z-index: 2;
+}
+
+.modal-title {
+  font-weight: bold !important;
+}
+
+.modal-dialog {
+  min-width: 55%;
+}
+
+#roulette {
+  height: auto;
+  max-width: 650px;
+  margin: auto;
+  z-index: 1;
+}
+
+#roulette:hover {
+  cursor: pointer;
+}
+
+#qr {
+  display: block;
+  width: 100% !important;
+  height: auto !important;
+  max-width: 300px !important;
+  margin: 0px auto !important;
+}

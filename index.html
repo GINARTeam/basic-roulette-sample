@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link rel="stylesheet" href="/bootstrap.min.css" />
+    <link rel="stylesheet" href="/micron.min.css" />
+    <link rel="stylesheet" href="/main.css" />
+
+    <link rel="icon" href="/favicon.png" sizes="50x50" />
+
+    <script src="/qrious.min.js"></script>
+
+    <title>Roulette</title>
+  </head>
+
+  <body>
+    <div class="alert d-none" id="alert">
+      <strong id="alert-data">Alert</strong>
+    </div>
+
+    <div
+      class="modal fade"
+      id="modal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="modalTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header text-light" id="modalHeader">
+            <h5 class="modal-title" id="modalTitle">Title</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <h6 id="modelBodyResult">Win/Close! Expect: x - Actual: y</h6>
+            <hr />
+            <span id="modelBodyVerify"></span>
+            <hr />
+            <canvas id="qr"></canvas>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">
+              Ok
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row justify-content-center"><div id="roulette"></div></div>
+      <div class="row align-items-center justify-content-center">
+        <div
+          class="btn-group btn-group-toggle d-flex flex-row flex-wrap justify-content-center"
+          data-toggle="buttons"
+          id="options"
+        >
+          <label
+            class="btn btn-outline-primary rounded-circle m-2 p-2"
+            style="width: 55px; height: 55px;"
+            data-micron="swing"
+            id="option-1"
+          >
+            <input type="radio" name="options" autocomplete="off" />01
+          </label>
+          <label
+            class="btn btn-outline-primary rounded-circle m-2 p-2"
+            style="width: 55px; height: 55px;"
+            data-micron="swing"
+            id="option-2"
+          >
+            <input type="radio" name="options" autocomplete="off" /><span
+              >02</span
+            >
+          </label>
+          <label
+            class="btn btn-outline-primary rounded-circle m-2 p-2"
+            style="width: 55px; height: 55px;"
+            data-micron="swing"
+            id="option-3"
+          >
+            <input type="radio" name="options" autocomplete="off" /><span
+              >03</span
+            >
+          </label>
+          <label
+            class="btn btn-outline-primary rounded-circle m-2 p-2"
+            style="width: 55px; height: 55px;"
+            data-micron="swing"
+            id="option-4"
+          >
+            <input type="radio" name="options" autocomplete="off" /><span
+              >04</span
+            >
+          </label>
+          <label
+            class="btn btn-outline-primary rounded-circle m-2 p-2"
+            style="width: 55px; height: 55px;"
+            data-micron="swing"
+            id="option-5"
+          >
+            <input type="radio" name="options" autocomplete="off" /><span
+              >05</span
+            >
+          </label>
+          <label
+            class="btn btn-outline-primary rounded-circle m-2 p-2"
+            style="width: 55px; height: 55px;"
+            data-micron="swing"
+            id="option-6"
+          >
+            <input type="radio" name="options" autocomplete="off" /><span
+              >06</span
+            >
+          </label>
+          <label
+            class="btn btn-outline-primary rounded-circle m-2 p-2"
+            style="width: 55px; height: 55px;"
+            data-micron="swing"
+            id="option-7"
+          >
+            <input type="radio" name="options" autocomplete="off" /><span
+              >07</span
+            >
+          </label>
+          <label
+            class="btn btn-outline-primary rounded-circle m-2 p-2"
+            style="width: 55px; height: 55px;"
+            data-micron="swing"
+            id="option-8"
+          >
+            <input type="radio" name="options" autocomplete="off" /><span
+              >08</span
+            >
+          </label>
+          <label
+            class="btn btn-outline-primary rounded-circle m-2 p-2"
+            style="width: 55px; height: 55px;"
+            data-micron="swing"
+            id="option-9"
+          >
+            <input type="radio" name="options" autocomplete="off" /><span
+              >09</span
+            >
+          </label>
+          <label
+            class="btn btn-outline-primary rounded-circle m-2 p-2"
+            style="width: 55px; height: 55px;"
+            data-micron="swing"
+            id="option-10"
+          >
+            <input type="radio" name="options" autocomplete="off" /><span
+              >10</span
+            >
+          </label>
+          <label
+            class="btn btn-outline-primary rounded-circle m-2 p-2"
+            style="width: 55px; height: 55px;"
+            data-micron="swing"
+            id="option-11"
+          >
+            <input type="radio" name="options" autocomplete="off" /><span
+              >11</span
+            >
+          </label>
+          <label
+            class="btn btn-outline-primary rounded-circle m-2 p-2"
+            style="width: 55px; height: 55px;"
+            data-micron="swing"
+            id="option-12"
+          >
+            <input type="radio" name="options" autocomplete="off" /><span
+              >12</span
+            >
+          </label>
+        </div>
+        <button
+          type="button"
+          class="btn btn-danger rounded-circle m-3 p-3"
+          data-micron="jelly"
+          style="width: 100px; height: 100px;"
+          id="randomButton"
+        >
+          Draw
+        </button>
+      </div>
+    </div>
+
+    <script src="/jquery-3.3.1.slim.min.js"></script>
+    <script src="/popper.min.js"></script>
+    <script src="/bootstrap.min.js"></script>
+    <script src="/micron.min.js"></script>
+    <script src="/p5.min.js"></script>
+
+    <script src="/main.js"></script>
+  </body>
+</html>
